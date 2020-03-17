@@ -1,0 +1,91 @@
+/** @format */
+
+#login-navtext {
+  position: relative;
+  top: 0.2em;
+  color: rgb(204, 141, 6);
+  padding-left: 10%;
+  font: bold;
+  font-size: 20pt;
+  font-family: Helvetica, Arial, sans-serif;
+}
+#login-brand-img {
+  margin-left: 8em;
+  // margin-top: 0.5em;
+  // margin-bottom: 0.5em;
+}
+#login-card-container {
+  height: 45em;
+  margin-top: 3em;
+  margin-left: 70%;
+  width: 34em;
+}
+#login-input {
+  margin-top: 5em;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#login-input2 {
+  margin-top: 2em;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#main-body {
+  background-image: url(/assets/img/background2.JPG);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 100vh !important;
+  /* height:45em; */
+}
+#login-info {
+  margin-top: 24em;
+  background-color: white;
+  width: 55em;
+  margin-left: -5em;
+}
+
+#portal-text {
+  text-align: center;
+  color: rgb(255, 208, 0);
+  margin-top: 5em;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#portal-button {
+  background-color: rgb(204, 141, 6);
+  width: 40%;
+  margin-top: 7em;
+  margin-left: 30%;
+}
+#signin {
+  margin-top: 5em;
+}
+#custom-footer {
+  background-color: rgb(255, 255, 255);
+  height: 5.5em;
+  padding-top: 1.8em;
+}
+#upcoming-event-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font: bold;
+  margin-left: 9em;
+  margin-top: -1.7em;
+}
+#upcoming-event-text2 {
+  margin-left: 7em;
+  margin-top: -1.2em;
+}
+#upcoming-event-date {
+  margin-left: 25em;
+  margin-top: -1.8em;
+}
+#upcoming-event-img {
+  margin-left: 5.5em;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}

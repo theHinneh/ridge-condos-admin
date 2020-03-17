@@ -1,0 +1,82 @@
+<!-- @format -->
+
+<body class="">
+  <app-navbar></app-navbar>
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-background-color="white">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div class="main-panel">
+      <div class="container-fluid">
+        <p class="navbar-brand" id="page-header">{{ title }}</p>
+      </div>
+      <div class="content" id="custom-dash">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div class="card">
+                <div class="card-header card-header">
+                  <h4 class="card-title">Rooms Currently in Use</h4>
+                  <!-- <p class="card-category">Updated on {{ date }}</p> -->
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-success">
+                      <th>Name</th>
+                      <th>Entry</th>
+                      <th>Exit</th>
+                      <th>Room No.</th>
+                      <th>Children</th>
+                      <th>Adult</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Yaw Asante</td>
+                        <td>12/04/2020</td>
+                        <td>23/05/2020</td>
+                        <td>Rm 345</td>
+                        <td>2</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card">
+                <div class="card-header card-header">
+                  <h4 class="card-title">Rooms Available Now</h4>
+                  <!-- <p class="card-category">Updated on {{ date }}</p> -->
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-success">
+                      <th>Room No.</th>
+                      <th>Room Type</th>
+                      <th>Price</th>
+                      <th>Children</th>
+                      <th>Adult</th>
+                    </thead>
+                    <tbody *ngFor="let resp of response">
+                      <tr *ngIf="resp.status === 'AVAILABLE'">
+                        <td>{{ resp.roomNumber }}</td>
+                        <td>{{ resp.category }}</td>
+                        <td>
+                          {{ resp.price }}
+                        </td>
+                        <td>{{ resp.children }}</td>
+                        <td>{{ resp.adult }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End of Main Page  -->
+    </div>
+  </div>
+</body>

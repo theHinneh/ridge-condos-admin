@@ -1,0 +1,176 @@
+<!-- @format -->
+
+<app-navbar></app-navbar>
+<div class="wrapper" id="body-fix">
+  <div class="sidebar" data-color="white" data-background-color="white">
+    <app-sidenav></app-sidenav>
+  </div>
+
+  <div class="main-panel">
+    <div class="container-fluid" id="top-nav">
+      <p class="navbar-brand" id="page-header">{{ title }}</p>
+      <app-modal
+        [modalTitle]="modalTitle"
+        [modalLaunch]="modalLaunch"
+        id="addRoom-button"
+      >
+        <form
+          (ngSubmit)="functionCall === 'update' ? updateRoom() : createRoom()"
+        >
+          <div class="row">
+            <div class="form-group col">
+              <input
+                [(ngModel)]="roomForm.category"
+                name="category"
+                type="text"
+                class="form-control"
+                placeholder="Category"
+              />
+            </div>
+            <div class="form-group col">
+              <input
+                [(ngModel)]="roomForm.roomNumber"
+                name="roomNumber"
+                type="text"
+                class="form-control"
+                placeholder="Room Number"
+              />
+            </div>
+            <div class="form-group col mb-3" style="margin-top: 1.5em;">
+              <select
+                class="custom-select"
+                [(ngModel)]="roomForm.status"
+                required
+                name="status"
+              >
+                <option selected disabled value="AVAILABLE">Status</option>
+                <option value="OCCUPIED">Occupied</option>
+                <option value="AVAILABLE">Available</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea
+              [(ngModel)]="roomForm.description"
+              name="description"
+              class="form-control"
+              placeholder="Room Description"
+            ></textarea>
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
+              <input
+                [(ngModel)]="roomForm.price"
+                name="price"
+                type="text"
+                class="form-control"
+                placeholder="Price"
+              />
+            </div>
+            <div class="form-group col">
+              <input
+                [(ngModel)]="roomForm.children"
+                name="children"
+                type="number"
+                class="form-control"
+                placeholder="Children"
+              />
+            </div>
+            <div class="form-group col">
+              <input
+                [(ngModel)]="roomForm.adult"
+                name="adult"
+                type="number"
+                class="form-control"
+                placeholder="Adult"
+              />
+            </div>
+          </div>
+          <div
+            class="spinner-border"
+            role="status"
+            style="float: right !important;"
+            *ngIf="loading"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+          <button
+            *ngIf="!loading"
+            type="submit"
+            class="btn btn-primary"
+            style="float: right !important;"
+          >
+            Submit
+          </button>
+        </form>
+        <h3 [style.color]="toastColor">
+          {{ toastMessage }}
+        </h3>
+      </app-modal>
+    </div>
+    <div *ngIf="loader" class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+
+    <h2 *ngIf="noRooms" style="color: red; text-align: center;">
+      {{ errorMessage }}
+    </h2>
+    <div *ngIf="!loader" class="content" id="custom-dash">
+      <div class="container-fluid">
+        <div class="row" style="margin-top: -6em;">
+          <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let room of response">
+            <div class="card card-stats">
+              <div class="card-header card-header card-header">
+                <div class="media media-custom d-block mb-4 h-100">
+                  <div class="media-body">
+                    <h2 class="mt-0 mb-3">
+                      <div style="font-size: 25px !important;">
+                        {{ room.category }} <br /><span
+                          style="font-weight: 900; color: orange;"
+                          >GHS {{ room.price }}</span
+                        >
+                      </div>
+                    </h2>
+                    <p>
+                      {{ room.description }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Room {{ room.roomNumber }}</li>
+                <li
+                  class="list-group-item"
+                  [ngStyle]="{
+                    color: room.status === 'AVAILABLE' ? 'green' : 'red'
+                  }"
+                >
+                  {{ room.status }}
+                </li>
+              </ul>
+
+              <div class="card-footer">
+                <div class="stats">
+                  <button
+                    type="submit"
+                    class="btn btn-primary pull-right view-button"
+                    (click)="triggerModal(room)"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary pull-right view-button"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

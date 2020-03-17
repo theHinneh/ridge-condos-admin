@@ -1,0 +1,95 @@
+/** @format */
+
+#page-header {
+  position: relative;
+  top: 3.7em;
+  font-family: Arial, Helvetica, sans-serif;
+  font: bold;
+  margin-left: 0.7em;
+}
+#addRequest-button {
+  position: absolute;
+  background-color: #ff7f27;
+  top: 5em;
+  left: 84em;
+  font-size: small;
+  padding-left: 2em;
+  width: 12em;
+}
+#top-nav {
+  background-color: white;
+  height: 8em;
+}
+#button-icon {
+  margin-right: 0.5em;
+  position: relative;
+  top: -0.1em;
+}
+#search-form {
+  position: relative;
+}
+.filter-input {
+  margin-left: 1em;
+  padding-left: 5.5em;
+  padding-right: 5.5em;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+  width: 69em;
+  border-color: #ff7f27;
+  border-radius: 2em;
+}
+#formSearch-button {
+  background-color: white;
+  color: #ff7f27;
+  position: relative;
+  left: 5em;
+  border: solid 1px #ff7f27;
+  border-radius: 2em;
+}
+
+#listView-item {
+  margin-top: 2em;
+  padding: 3em;
+}
+
+#vehicle-info {
+  font-size: smaller;
+}
+li {
+  list-style-type: none;
+}
+.dropdown-item:hover {
+  background-color: gray;
+}
+#addRoom-button {
+  position: absolute;
+  background-color: #ff7f27;
+  top: 5em;
+  left: 82em;
+  font-size: small;
+  padding-left: 2em;
+  // width: 11em;
+}
+.modal-btn {
+  background-color: transparent;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  font-weight: 900;
+}
+.modal {
+  color: black;
+}
+.modal-dialog {
+  min-width: 90vw;
+}
+.btn.btn-primary {
+  background-color: orange !important;
+}
+.sidebar {
+  max-width: 15vw !important;
+}
+.main-panel {
+  width: 85vw !important;
+}

@@ -1,0 +1,97 @@
+<!-- @format -->
+
+<!-- Start of Main Page  -->
+<div class="content" id="main-body">
+  <div class="container-fluid">
+    <div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-chart" id="login-info">
+            <div class="card-body">
+              <p class="card-category"></p>
+              <img
+                id="login-brand-img"
+                src="./assets/images/logo.jpg"
+                width="150"
+                height="150"
+              />
+              <p id="login-navtext" class="navbar-brand">
+                Ridge Condos FrontDesk Portal
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card card-chart" id="login-card-container">
+            <div class="card-body">
+              <div class="tab-content">
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                  <div class="tab-pane active" id="signin">
+                    <h4
+                      style="text-align: center; color: green;margin-top: 2em;"
+                    >
+                      Portal Login
+                    </h4>
+                    <h6 style="text-align: center;color: green;">
+                      Enter the approved username and password
+                    </h6>
+                    <div id="login-input" class="container-fluid">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Username</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          ngModel
+                          name="username"
+                          autocomplete="off"
+                        />
+                      </div>
+                    </div>
+
+                    <div id="login-input2" class="container-fluid">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          ngModel
+                          name="password"
+                        />
+                      </div>
+                    </div>
+                    <div *ngIf="showError" class="error">
+                      Invalid Username or Password
+                    </div>
+
+                    <button
+                      [disabled]="loadingOrSubmit === 'Login' ? false : true"
+                      class="btn btn-primary pull-right"
+                      id="portal-button"
+                    >
+                      {{ loadingOrSubmit }}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="custom-footer">
+    <img
+      id="upcoming-event-img"
+      src="/assets/img/event.png"
+      width="40"
+      height="40"
+    />
+    <h4 id="upcoming-event-text">
+      Upcoming Event :
+      <h3 id="upcoming-event-text2">{{ event }}</h3>
+      <h3 id="upcoming-event-date">{{ dateOfProg }}</h3>
+    </h4>
+  </div> -->
+  <div toastContainer></div>
+</div>

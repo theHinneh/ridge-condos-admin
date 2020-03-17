@@ -1,0 +1,35 @@
+/** @format */
+
+#navbar-custom {
+  position: fixed;
+  height: 3em;
+}
+#search-custom {
+  position: relative;
+  left: -17em;
+  width: 25em;
+}
+#addDropdownMenuLink {
+  background-color: #ffe6730a;
+  position: relative;
+  left: -24em;
+}
+.navbar-add {
+  position: relative;
+  left: -30em;
+}
+.navbar-icon {
+  margin-right: 0.2em;
+}
+.navbardrop-icons {
+  margin-right: 0.5em;
+}
+#adddrop-custom {
+  margin-left: 19em;
+}
+.dropdown-item:hover {
+  background-color: gray;
+}
+#custom-item {
+  margin-top: -2em;
+}

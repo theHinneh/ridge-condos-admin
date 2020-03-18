@@ -32,10 +32,6 @@ export class BookingComponent implements OnInit {
     this.bookingForm.exitDate = `${eYear}-${eMonth}-${eDay}`.toString();
 
     console.log(this.bookingForm);
-
-    // this.apiService.createReservation(this.bookingForm).subscribe(res => {
-    //   console.log(res);
-    // });
   }
 
   ngOnInit() {}

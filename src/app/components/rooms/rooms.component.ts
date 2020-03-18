@@ -34,7 +34,6 @@ export class RoomsComponent implements OnInit {
   getRooms() {
     this.apiService.getRooms().subscribe(
       res => {
-        // console.log(res);
         this.response = res;
         this.loader = true;
         if (this.response.length === 0) {
@@ -44,7 +43,6 @@ export class RoomsComponent implements OnInit {
         }
         this.noRooms = false;
         this.loader = false;
-        // console.log(this.response);
       },
       error => {
         this.toastMessage = "Sorry, no rooms available";
@@ -78,7 +76,6 @@ export class RoomsComponent implements OnInit {
     api.subscribe(
       res => {
         if (res) {
-          // console.log(res);
           this.loading = false;
           this.roomForm = new NewRoom();
           this.toast = true;
@@ -107,7 +104,7 @@ export class RoomsComponent implements OnInit {
     let element: HTMLElement = document.getElementById(
       "modal-btn"
     ) as HTMLElement;
-    // console.log(element);
+
     element.click();
     this.roomForm = room;
     this.roomId = room.id;

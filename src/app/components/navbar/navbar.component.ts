@@ -1,14 +1,14 @@
 /** @format */
 
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { StorageService } from '../../services/storage.service';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { StorageService } from "../../services/storage.service";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  selector: "app-navbar",
+  templateUrl: "./navbar.component.html",
+  styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
   user: any;
@@ -26,6 +26,6 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.storageService.deleteStorage();
-    this.router.navigate(['admin/login']);
+    this.router.navigate(["admin/login"]);
   }
 }

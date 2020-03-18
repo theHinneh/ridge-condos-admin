@@ -1,16 +1,16 @@
 /** @format */
 
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { Component, OnInit } from "@angular/core";
+import { ApiService } from "../../services/api.service";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: "app-dashboard",
+  templateUrl: "./dashboard.component.html",
+  styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
-  title = 'Dashboard';
-  // date = '15th September, 2020';
+  title = "Dashboard";
+
   response = [];
 
   // tslint:disable-next-line: no-shadowed-variable

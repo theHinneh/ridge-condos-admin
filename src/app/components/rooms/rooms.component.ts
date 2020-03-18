@@ -64,6 +64,15 @@ export class RoomsComponent implements OnInit {
     this.submitForm(api);
   }
 
+  deleteRoom(room: any) {
+    return this.apiService.deleteRoom(room.id).subscribe(
+      res => {
+        this.getRooms();
+      },
+      error => (this.toastMessage = error.message)
+    );
+  }
+
   submitForm(api) {
     this.loading = true;
     api.subscribe(

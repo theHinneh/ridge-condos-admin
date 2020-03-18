@@ -4,7 +4,6 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { JwtHelperService, JWT_OPTIONS } from "@auth0/angular-jwt";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BookingComponent } from "./components/booking/booking.component";
@@ -33,8 +32,7 @@ import { SidenavComponent } from "./components/sidenav/sidenav.component";
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    NgbModule
+    BrowserAnimationsModule
   ],
   providers: [
     JwtHelperService,
